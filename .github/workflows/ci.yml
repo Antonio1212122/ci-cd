@@ -35,11 +35,16 @@ jobs:
 
     - name: Install dependencies
       run: |
+        cd capitas
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Run migrations
-      run: python manage.py migrate
+      run: 
+        cd capitas
+        python manage.py migrate
 
     - name: Run tests
-      run: python manage.py test
+      run: 
+        cd capitas
+        python manage.py test
